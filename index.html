@@ -22,9 +22,7 @@
             // Generate a random number
             randomNumber = Math.floor(Math.random() * 10) +1;
 
-
-            
-            alert(`the hidden number is ${randomNumber}`);
+            // Prompt user to guess a number between 1 and 10
             userInput = prompt('Guess a Number between 1 and 10.');
 
             // Processing guesses
@@ -32,14 +30,19 @@
 
                 guess = false;
 
+                // If the user guess is too high
                 if (userInput > randomNumber){
                     userInput = prompt('Your guess was too high, guess again.');
                     count += 1;
                 }
+
+                // If the user guess is too low
                 else if (userInput < randomNumber){
                     userInput = prompt('Your guess was too low, guess again.');
                     count += 1;
                 }
+
+                // If the user guess matches the number
                 else{
                     alert('Your guess was correct!')
                     count += 1;
@@ -49,6 +52,7 @@
                 }
             } while (guess === false);
 
+            // Ask the user if they want to play again
             contGame = prompt('Would you like to play again (y/n)?');
 
         } while (contGame.toLowerCase() === 'y');
